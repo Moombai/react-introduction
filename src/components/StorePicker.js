@@ -13,9 +13,13 @@ class StorePicker extends React.Component {
 	// In JavaScript, class methods are not bound by default
 	goToStore(event) {
 		event.preventDefault(); // regular JavaScript
+		
 		// first grab the text from the box
-		console.log(this.storeInput.value); // storeInput was added in the render method
+		const storeId = this.storeInput.value; // storeInput was added in the render method
+		console.log(`Going to ${storeId}`);
+		
 		// second transition from / to /store/:storeId
+		this.context.router.transitionTo(`/store/${storeId}`); // Use Router method in this 'context'
 	}
 
 	render() {
@@ -31,6 +35,11 @@ class StorePicker extends React.Component {
 			</form>
 		);
 	}
+}
+
+// Add Router to StorePicker context
+StorePicker.contextTypes = {
+	router: React.PropTypes.object
 }
 
 export default StorePicker;
