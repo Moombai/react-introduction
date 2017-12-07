@@ -10,6 +10,7 @@ class StorePicker extends React.Component {
 	// 	this.goToStore = this.goToStore.bind(this); // find method and bind to store picker
 	// }
 
+	// In JavaScript, class methods are not bound by default
 	goToStore(event) {
 		event.preventDefault(); // regular JavaScript
 		// first grab the text from the box
