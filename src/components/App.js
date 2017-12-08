@@ -28,7 +28,8 @@ class App extends React.Component {
 		const timestamp = Date.now();
 		  /** Add new fish state to existing state with time stamp  **/
 		fishes[`fish-${timestamp}`] = fish;
-		// set state
+		// set state 
+		/** On calling setState(), React will re-render the UI! **/
 		this.setState({ fishes: fishes }); // alternative input: ({ fishes })
 	}
 
