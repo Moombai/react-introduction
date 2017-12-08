@@ -1,9 +1,14 @@
 import React from 'react';
+import AddFishForm from './AddFishForm';
 
 class Inventory extends React.Component {
 	render() {
 		return (
-			<p>Inventory</p>
+			<div>
+				<h2>Inventory</h2>
+				{/* pass addFish prop down to AddFishForm */}
+				<AddFishForm addFish={this.props.addFish} />
+			</div>
 		);
 	}
 }
