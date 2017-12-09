@@ -12,3 +12,9 @@ With our initial state set, and addFish method bound to our App component, we ca
 * updating the App state with data from the state copy
 
 We then pass down our addFish method to AddFishForm via the props value. It will be called here when we submit the form.
+
+## Chapter 15 - Displaying State with JSX:
+
+In this chapter we create the Fish Componenet in order to render our fishes. Rendering lists of items in JSX is usually achieved using the map function. Interestingly ReactJS likes us to keep a copy of the propery key for each rendered value to make it more efficient for React to update the DOM in future (otherwise React will have to look through all the elements rendered with `map`).
+
+We use the Object keys method to produce a list of all the object keys in the fish state. We then pass all the keys and values down to the Fish component as props. Here the fish component will handle the rendering.
