@@ -9,6 +9,8 @@ class App extends React.Component {
 	// We cannot use 'this' in a constructor until we call super(), which will initialise React.Component
 	// constructor allows us to add methods to the new App instance
 	constructor(){
+		// super() allows us to add new methods to our App component
+		// The render() method belongs to the React.Component class
 		super();
 
 		// bind addFish method to App
