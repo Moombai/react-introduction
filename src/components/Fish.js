@@ -4,6 +4,10 @@ import { formatPrice } from '../helpers';
 class Fish extends React.Component {
 	render() {
 		const details = this.props.details; // possible to use destructuring to shorten syntax
+		const index = this.props.index;
+		const isAvailable = ( details.status === 'available' );
+		const buttonText = isAvailable ? 'Add To Order' : 'Sold Out!';
+
 		return (
 			<li className="menu-fish">
 				<img src={details.image} alt={details.name} />
@@ -12,7 +16,8 @@ class Fish extends React.Component {
 					<span className="price">{formatPrice(details.price)}</span>
 				</h3>
 				<p>{details.desc}</p>
-				<button>Add to Order</button>
+				{/* On click we use the fat arrow syntax to capture the addToOrder argument */}
+				<button disabled={!isAvailable} onClick={() => this.props.addToOrder(index)}>{ buttonText }</button>
 			</li>
 		)
 	}

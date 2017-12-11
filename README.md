@@ -18,3 +18,10 @@ We then pass down our addFish method to AddFishForm via the props value. It will
 In this chapter we create the Fish Componenet in order to render our fishes. Rendering lists of items in JSX is usually achieved using the map function. Interestingly ReactJS likes us to keep a copy of the propery key for each rendered value to make it more efficient for React to update the DOM in future (otherwise React will have to look through all the elements rendered with `map`).
 
 We use the Object keys method to produce a list of all the object keys in the fish state. We then pass all the keys and values down to the Fish component as props. Here the fish component will handle the rendering.
+
+## Chapert 16 - Updating Order State
+The objective here is to create an App method that will update the Order state on click. We first create an add to Order method which we add to the App component using the constructor method.
+
+After creating the addToOrder method we pass it down to our Fish component via props. We also need our key value from the fish state which has been passed down via the key property. We find however that the key value is not available in props as it is specially reserved for React to keep track of key values. In order to get the key value that we want, we instead pass it down via a prop called index.
+
+We also update the Fish component to check if the product is out of date before rendering.
