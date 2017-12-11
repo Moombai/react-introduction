@@ -25,3 +25,7 @@ The objective here is to create an App method that will update the Order state o
 After creating the addToOrder method we pass it down to our Fish component via props. We also need our key value from the fish state which has been passed down via the key property. We find however that the key value is not available in props as it is specially reserved for React to keep track of key values. In order to get the key value that we want, we instead pass it down via a prop called index.
 
 We also update the Fish component to check if the product is out of date before rendering.
+
+## Chapter 17 - Displaying Order State with JSX
+
+To display our orders we pass down the fish state and the order state to the Order Component. If a fish is available we add it's cost to the total order cost using the reduce function. There is a new code construct here that is of interest. Instead of creating a component to display orders, we create another method on the Order component and use it to render the JSX we need. This further emphasises that React is just JavaScript.
