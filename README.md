@@ -29,3 +29,7 @@ We also update the Fish component to check if the product is out of date before 
 ## Chapter 17 - Displaying Order State with JSX
 
 To display our orders we pass down the fish state and the order state to the Order Component. If a fish is available we add it's cost to the total order cost using the reduce function. There is a new code construct here that is of interest. Instead of creating a component to display orders, we create another method on the Order component and use it to render the JSX we need. This further emphasises that React is just JavaScript.
+
+## Chapter 18 - Persisting Our State with Firebase
+
+In this section we set up Firebase and the necessary credentials to base.js file. This file is exported so it can be used in the application when needed. We then use the React method `componentWillMount()` to update the database state just before rendering. We use the analogous `componentWillUnmount()` to disconnect from the database when we no longer need access. Now Firebase will keep track of our state for us, even after we've reset the page. 
