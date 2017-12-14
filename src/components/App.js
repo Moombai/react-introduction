@@ -16,6 +16,8 @@ class App extends React.Component {
 
 		// bind addFish method to App
 		this.addFish = this.addFish.bind(this);
+		this.removeFish = this.removeFish.bind(this);
+		this.removeOrder = this.removeOrder.bind(this);
 		this.updateFish = this.updateFish.bind(this);
 		this.loadSamples = this.loadSamples.bind(this);
 		this.addToOrder = this.addToOrder.bind(this);
@@ -74,6 +76,20 @@ class App extends React.Component {
 		this.setState({ fishes: fishes });
 	}
 
+	removeFish(key) {
+		const fishes = {...this.state.fishes};
+		// syntax to remove key in firbase 
+		fishes[key] = null;
+		this.setState({ fishes: fishes });
+	}
+
+	removeOrder(key) {
+		const order = {...this.state.order};
+		// not limited by firebase this time
+		delete order[key];
+		this.setState({ order })
+	}
+
 	loadSamples() {
 		this.setState({
 			fishes: sampleFishes
@@ -107,6 +123,7 @@ class App extends React.Component {
 					fishes={this.state.fishes}
 					order={this.state.order}
 					params={this.props.params}
+					removeOrder={this.removeOrder}
 				/>
 				{/* pass the add fish method down to inventory as a prop */}
 				<Inventory 
@@ -114,6 +131,7 @@ class App extends React.Component {
 					loadSamples={this.loadSamples}
 					fishes={this.state.fishes}
 					updateFish={this.updateFish}
+					removeFish={this.removeFish}
 				/>
 			</div>
 		);
